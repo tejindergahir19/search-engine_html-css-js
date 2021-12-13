@@ -95,12 +95,12 @@ input[type=search]:focus {
 
     .search .container form center input[type=search]
     {
-        width:95%;
+        width:90vw;
     } 
 
 .result-search input{
     margin-top:26px;
-    width:85%;
+    width:80vw;
 }
 
 .search-results a .title
