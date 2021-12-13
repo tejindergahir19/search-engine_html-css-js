@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Explore</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+<script>
+const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		let json = JSON.parse(this.responseText);
+
+		console.log(this.responseText);
+		for(var i=0;i<30;i++)
+		{
+			console.log(json.results[i].title);
+			console.log(json.results[i].link);
+			console.log(json.results[i].description);
+			console.log("<br>");
+		}
+	}
+});
+
+xhr.open("GET", "https://google-search3.p.rapidapi.com/api/v1/search/q=elon+musk&num=30");
+xhr.setRequestHeader("x-user-agent", "desktop");
+xhr.setRequestHeader("x-proxy-location", "US");
+xhr.setRequestHeader("x-rapidapi-host", "google-search3.p.rapidapi.com");
+xhr.setRequestHeader("x-rapidapi-key", "838a58c050msh7a645958883cdbap1c246fjsnf2bcd2c8cd3c");
+
+xhr.send(data);
+</script>
